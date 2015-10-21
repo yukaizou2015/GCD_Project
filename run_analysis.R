@@ -6,7 +6,10 @@ setwd("~/Desktop/Coursera/CleaningData/GCD_Project")
 # 4 Appropriately labels the data set with descriptive variable names.
 
 # Read in Data
-# explore test sets
+features <- read.table("./UCI HAR Dataset/features.txt", stringsAsFactors=FALSE)
+features <- features$V2
+
+# read in test sets
 X_test <- read.table("./UCI HAR Dataset/test/X_test.txt")
 subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt")
 y_test <- read.table("./UCI HAR Dataset/test/y_test.txt")
@@ -20,7 +23,8 @@ total_acc_x_test <- read.table("./UCI HAR Dataset/test/Inertial Signals/total_ac
 total_acc_y_test <- read.table("./UCI HAR Dataset/test/Inertial Signals/total_acc_y_test.txt")
 total_acc_z_test <- read.table("./UCI HAR Dataset/test/Inertial Signals/total_acc_z_test.txt")
 
-Test <- data.frame(Activity = y_test$V1, X_test)
+names(X_test) <- features
+Test <- data.frame(Subject = subject_test, Activity = y_test$V1, X_test)
 
 # explore training sets
 X_train <- read.table("./UCI HAR Dataset/train/X_train.txt")
@@ -36,7 +40,7 @@ total_acc_x_train <- read.table("./UCI HAR Dataset/train/Inertial Signals/total_
 total_acc_y_train <- read.table("./UCI HAR Dataset/train/Inertial Signals/total_acc_y_train.txt")
 total_acc_z_train <- read.table("./UCI HAR Dataset/train/Inertial Signals/total_acc_z_train.txt")
 
-Train <- data.frame(Activity = y_train$V1, X_train) # Activity: label from y_train
+Train <- data.frame(Subject = subject_train$V1, Activity = y_train$V1, X_train) # Activity: label from y_train
 
 # Export Data
-write.table(X_train, "combined.txt", row.name=FALSE)
+write.table(Train, "combined.txt", row.name=FALSE)
