@@ -40,7 +40,10 @@ total_acc_x_train <- read.table("./UCI HAR Dataset/train/Inertial Signals/total_
 total_acc_y_train <- read.table("./UCI HAR Dataset/train/Inertial Signals/total_acc_y_train.txt")
 total_acc_z_train <- read.table("./UCI HAR Dataset/train/Inertial Signals/total_acc_z_train.txt")
 
+names(X_train) <- features
 Train <- data.frame(Subject = subject_train$V1, Activity = y_train$V1, X_train) # Activity: label from y_train
+
+Merge <- merge(Train, Test, all=TRUE)
 
 # Export Data
 write.table(Train, "combined.txt", row.name=FALSE)
