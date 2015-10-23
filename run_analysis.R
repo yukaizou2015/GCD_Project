@@ -24,18 +24,17 @@ y_train <- read.table("./UCI HAR Dataset/train/y_train.txt", stringsAsFactors = 
 Train <- data.frame(subject_train, y_train, X_train) %>% select(1:2, ind.mean+2, ind.std+2)
 head(Train[,1:6])
 combined <- full_join(Train, Test)
-# mutate(measurement = paste(subject,activity,sep="."))
-head(combined)
 
 # Export Data
-write.table(com.mean.sd, "tidydataset.txt", row.name=FALSE)
+write.table(combined, "tidydataset.txt", row.name=FALSE)
 
-com.mean <- sapply(combined, function(x) tapply(x, combined$measurement, mean))
-com.sd <- sapply(combined[,-c(1,2)], function(x) tapply(x, combined$measurement, sd))
+com.measure <- mutate(combined, measurement = paste(subject,activity,sep="."))
+com.mean <- sapply(com.measure, function(x) tapply(x, com.measure$measurement, mean))
+com.sd <- sapply(com.measure[,-c(1,2)], function(x) tapply(x, com.measure$measurement, sd))
 com.sd <- data.frame(com.mean[,1:2], com.sd)
 com.mean.sd <- merge(com.mean, com.sd, by=c("subject","activity"), suffixes = c(".mean", ".sd")) %>% select(subject:angle.X.gravityMean..sd)
 
 # 3 Uses descriptive activity names to name the activities in the data set.
 com.mean.sd <- merge(activity_labels, com.mean.sd, by.x = "V1", by.y = "activity") %>% rename(activity = V2) %>% select(activity:angle.X.gravityMean..sd)
-head(com.mean.sd[,60:80])
+head(com.mean.sd[,1:6])
 # 4 Appropriately labels the data set with descriptive variable names.
