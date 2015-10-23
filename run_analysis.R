@@ -3,6 +3,8 @@ library(dplyr)
 
 # 1 Merges the training and the test sets to create one data set.
 # 2 Extracts only the measurements on the mean and standard deviation for each measurement.
+# 3 Uses descriptive activity names to name the activities in the data set.
+# 4 Appropriately labels the data set with descriptive variable names.
 
 # Read in Data
 activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt", stringsAsFactors = FALSE)
@@ -24,17 +26,15 @@ y_train <- read.table("./UCI HAR Dataset/train/y_train.txt", stringsAsFactors = 
 Train <- data.frame(subject_train, y_train, X_train) %>% select(1:2, ind.mean+2, ind.std+2)
 head(Train[,1:6])
 combined <- full_join(Train, Test)
+combined <- merge(activity_labels, combined, by.x = "V1", by.y = "activity") %>% rename(activity = V2) %>% select(2:(length(combined)-1))
 
-# Export Data
-write.table(combined, "tidydataset.txt", row.name=FALSE)
+# Export the first tidy data set
+write.table(combined, "1st_tidydataset.txt", row.name=FALSE)
 
 com.measure <- mutate(combined, measurement = paste(subject,activity,sep="."))
-com.mean <- sapply(com.measure, function(x) tapply(x, com.measure$measurement, mean))
-com.sd <- sapply(com.measure[,-c(1,2)], function(x) tapply(x, com.measure$measurement, sd))
-com.sd <- data.frame(com.mean[,1:2], com.sd)
-com.mean.sd <- merge(com.mean, com.sd, by=c("subject","activity"), suffixes = c(".mean", ".sd")) %>% select(subject:angle.X.gravityMean..sd)
+com.average <- data.frame(sapply(com.measure, function(x) tapply(x, com.measure$measurement, mean))) %>% select(1:(length(com.average)-1))
 
-# 3 Uses descriptive activity names to name the activities in the data set.
-com.mean.sd <- merge(activity_labels, com.mean.sd, by.x = "V1", by.y = "activity") %>% rename(activity = V2) %>% select(activity:angle.X.gravityMean..sd)
-head(com.mean.sd[,1:6])
-# 4 Appropriately labels the data set with descriptive variable names.
+com.average <- merge(activity_labels, com.average, by.x = "V1", by.y = "activity") %>% rename(activity = V2) %>% select(2:(length(com.average)-1))
+
+# Export the second tidy data set
+write.table(com.average, "2nd_tidydataset.txt", row.name=FALSE)
