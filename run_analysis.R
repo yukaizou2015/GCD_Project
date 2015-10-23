@@ -24,7 +24,7 @@ X_train <- read.table("./UCI HAR Dataset/train/X_train.txt"); names(X_train) <- 
 subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt") %>% rename(subject = V1)
 y_train <- read.table("./UCI HAR Dataset/train/y_train.txt", stringsAsFactors = FALSE) %>% rename(activity = V1)
 Train <- data.frame(subject_train, y_train, X_train) %>% select(1:2, ind.mean+2, ind.std+2)
-head(Train[,1:6])
+
 combined <- full_join(Train, Test)
 combined <- merge(activity_labels, combined, by.x = "V1", by.y = "activity") %>% rename(activity = V2) %>% select(2:(length(combined)-1))
 
