@@ -1,4 +1,8 @@
-# GCD_Project
+# README
+
+(from forum)
+1) I interpret README.md explains the process we used in deciding to select/use this data (we located/created data from such&such because ______, before we analyzed it we did such&such because ___).  
+
 The purpose of this project is to demonstrate the ability to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. Several components were uploaded onto this repo as requested, and they are:
 1) tidy data sets (described below);
 2) a link to a Github repository with your script for performing the analysis;
