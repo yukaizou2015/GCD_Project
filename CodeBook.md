@@ -43,7 +43,7 @@ The complete list of variables of each feature vector is available in 'features.
 * "tGravityAcc.mean...X"        Gravity acceleration signals in X axis (Unit: Hz)
 * "tGravityAcc.mean...Y"        Gravity acceleration signals in X axis (Unit: Hz)
 * "tGravityAcc.mean...Z"        Gravity acceleration signals in X axis (Unit: Hz)
-* "tBodyAccJerk.mean...X"       Jerk signals of the body linear acceleration in X axis (Unit: $$m/s^3$$)
+* "tBodyAccJerk.mean...X"       Jerk signals of the body linear acceleration in X axis (Unit: $m/s^3$)
 * "tBodyAccJerk.mean...Y"
 * "tBodyAccJerk.mean...Z"
 * "tBodyGyro.mean...X"
