@@ -10,8 +10,8 @@ library(dplyr)
 activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt", stringsAsFactors = FALSE)
 features <- read.table("./UCI HAR Dataset/features.txt", stringsAsFactors=FALSE)
         # extract indexes for mean and std variables
-        ind.mean <- c(grep("mean", features$V2), grep("Mean", features$V2))
-        ind.std <- grep("std", features$V2)
+        ind.mean <- grep("mean()", features$V2, fixed = TRUE)
+        ind.std <- grep("std()", features$V2, fixed = TRUE)
 
 # read in test sets
 X_test <- read.table("./UCI HAR Dataset/test/X_test.txt"); names(X_test) <- features$V2
@@ -26,15 +26,14 @@ y_train <- read.table("./UCI HAR Dataset/train/y_train.txt", stringsAsFactors = 
 Train <- data.frame(subject_train, y_train, X_train) %>% select(1:2, ind.mean+2, ind.std+2)
 
 combined <- full_join(Train, Test)
-combined <- merge(activity_labels, combined, by.x = "V1", by.y = "activity") %>% rename(activity = V2) %>% select(2:(length(combined)-1))
-
 # Export the first tidy data set
 write.table(combined, "1st_tidydataset.txt", row.name=FALSE)
 
 com.measure <- mutate(combined, measurement = paste(subject,activity,sep="."))
-com.average <- data.frame(sapply(com.measure, function(x) tapply(x, com.measure$measurement, mean))) %>% select(1:(length(com.average)-1))
-
-com.average <- merge(activity_labels, com.average, by.x = "V1", by.y = "activity") %>% rename(activity = V2) %>% select(2:(length(com.average)-1))
+com.average <- data.frame(sapply(com.measure, function(x) tapply(x, com.measure$measurement, mean)))
+com.average <- merge(activity_labels, com.average, by.x = "V1", by.y = "activity") %>% rename(activity = V2)
+com.average <- select(com.average, 2:(length(com.average)-1))
+dim(com.average)
 
 # Export the second tidy data set
 write.table(com.average, "2nd_tidydataset.txt", row.name=FALSE)

@@ -35,89 +35,72 @@ tBodyGyroJerkMean
 The complete list of variables of each feature vector is available in 'features.txt'
 
 # Variables
-* "activity"
-* "subject"
-* "tBodyAcc.mean...X"     Body acceleration signals in X axis (Unit: Hz)
-* "tBodyAcc.mean...Y"     Body acceleration signals in Y axis (Unit: Hz)
-* "tBodyAcc.mean...Z"     Body acceleration signals in Z axis (Unit: Hz)
-* "tGravityAcc.mean...X"        Gravity acceleration signals in X axis (Unit: Hz)
-* "tGravityAcc.mean...Y"        Gravity acceleration signals in X axis (Unit: Hz)
-* "tGravityAcc.mean...Z"        Gravity acceleration signals in X axis (Unit: Hz)
-* "tBodyAccJerk.mean...X"       Jerk signals of the body linear acceleration in X axis (Unit: $m/s^3$)
-* "tBodyAccJerk.mean...Y"
-* "tBodyAccJerk.mean...Z"
-* "tBodyGyro.mean...X"
-* "tBodyGyro.mean...Y"
-* "tBodyGyro.mean...Z"
-* "tBodyGyroJerk.mean...X"
-* "tBodyGyroJerk.mean...Y"
-* "tBodyGyroJerk.mean...Z"
-* "tBodyAccMag.mean.."
-* "tGravityAccMag.mean.."
-* "tBodyAccJerkMag.mean.."
-* "tBodyGyroMag.mean.."
-* "tBodyGyroJerkMag.mean.."
-* "fBodyAcc.mean...X"
-* "fBodyAcc.mean...Y"
-* "fBodyAcc.mean...Z"
-* "fBodyAcc.meanFreq...X"
-* "fBodyAcc.meanFreq...Y"
-* "fBodyAcc.meanFreq...Z"
-* "fBodyAccJerk.mean...X"
-* "fBodyAccJerk.mean...Y"
-* "fBodyAccJerk.mean...Z"
-* "fBodyAccJerk.meanFreq...X"
-* "fBodyAccJerk.meanFreq...Y"
-* "fBodyAccJerk.meanFreq...Z"
-* "fBodyGyro.mean...X"
-* "fBodyGyro.mean...Y"
-* "fBodyGyro.mean...Z"
-* "fBodyGyro.meanFreq...X"
-* "fBodyGyro.meanFreq...Y"
-* "fBodyGyro.meanFreq...Z"
-* "fBodyAccMag.mean.."
-* "fBodyAccMag.meanFreq.."
-* "fBodyBodyAccJerkMag.mean.."
-* "fBodyBodyAccJerkMag.meanFreq.."
-* "fBodyBodyGyroMag.mean.."
-* "fBodyBodyGyroMag.meanFreq.."
-* "fBodyBodyGyroJerkMag.mean.."
-* "fBodyBodyGyroJerkMag.meanFreq.."
-* "angle.tBodyAccMean.gravity."
-* "angle.tBodyAccJerkMean..gravityMean."
-* "angle.tBodyGyroMean.gravityMean."
-* "angle.tBodyGyroJerkMean.gravityMean."
-* "angle.X.gravityMean."
-* "angle.Y.gravityMean."
-* "angle.Z.gravityMean."
-* "tBodyAcc.std...X"
-* "tBodyAcc.std...Y"
-* "tBodyAcc.std...Z"
-* "tGravityAcc.std...X"
-* "tGravityAcc.std...Y"
-* "tGravityAcc.std...Z"
-* "tBodyAccJerk.std...X"
-* "tBodyAccJerk.std...Y"
-* "tBodyAccJerk.std...Z"
-* "tBodyGyro.std...X"
-* "tBodyGyro.std...Y"
-* "tBodyGyro.std...Z"
-* "tBodyGyroJerk.std...X"
-* "tBodyGyroJerk.std...Y"
-* "tBodyGyroJerk.std...Z"
-* "tBodyAccMag.std.."
-* "tGravityAccMag.std.."
-* "tBodyAccJerkMag.std.."
-* "tBodyGyroMag.std.."
-* "tBodyGyroJerkMag.std.."
-* "fBodyAcc.std...X"
-* "fBodyAcc.std...Y"
-* "fBodyAcc.std...Z"
-* "fBodyAccJerk.std...X"
-* "fBodyAccJerk.std...Y"
-* "fBodyAccJerk.std...Z"
-* "fBodyGyro.std...X"
-* "fBodyGyro.std...Y"
-* "fBodyGyro.std...Z"
-* "fBodyAccMag.std.."
-* "fBodyBodyAccJerkMag.std.."
+"Variable"(Unit): Description
+* "activity": Tasks performed by the volunteers, including: WALKING, WALKING\_UPSAIRS, WALKING\_DOWNSTAIRS, SITTING, STANDING, LAYING.
+* "subject": The volunteers in the experiments. All volunteers were within an age bracket of 19-48 years, and were labeled from 1 to 30.
+* "tBodyAcc.mean...X"(m/sec^2): The average of the mean of the time-domain signals of body acceleration in X axis
+* "tBodyAcc.mean...Y"(m/sec^2): The average of the mean of the time-domain signals of body acceleration in Y axis
+* "tBodyAcc.mean...Z"(m/sec^2): The average of the mean of the time-domain signals of body acceleration in Z axis
+* "tGravityAcc.mean...X"(m/sec^2): The average of the mean of the time-domain signals of gravity acceleration in X axis
+* "tGravityAcc.mean...Y"(m/sec^2): The average of the mean of the time-domain signals of gravity acceleration in Y axis
+* "tGravityAcc.mean...Z"(m/sec^2): The average of the mean of the time-domain signals of gravity acceleration in Z axis
+* "tBodyAccJerk.mean...X"(m/sec^3): The average of the mean of Jerk signals of the body linear acceleration in time domain in X axis
+* "tBodyAccJerk.mean...Y"(m/sec^3): The average of the mean of Jerk signals of the body linear acceleration in time domain in Y axis
+* "tBodyAccJerk.mean...Z"(m/sec^3): The average of the mean of Jerk signals of the body linear acceleration in time domain in Z axis
+* "tBodyGyro.mean...X"(rad/sec): The average of the mean of the time-domain signals of angular velocity in X axis 
+* "tBodyGyro.mean...Y"(rad/sec): The average of the mean of the time-domain signals of angular velocity in Y axis 
+* "tBodyGyro.mean...Z"(rad/sec): The average of the mean of the time-domain signals of angular velocity in Z axis 
+* "tBodyGyroJerk.mean...X"(rad/sec^3): The average of the mean of Jerk signals of the angular velocity in time domain in X axis
+* "tBodyGyroJerk.mean...Y"(rad/sec^3): The average of the mean of Jerk signals of the angular velocity in time domain in Y axis
+* "tBodyGyroJerk.mean...Z"(rad/sec^3): The average of the mean of Jerk signals of the angular velocity in time domain in Z axis
+* "tBodyAccMag.mean..": The average of the mean of the magnitude for the time-domain signals of body acceleration
+* "tGravityAccMag.mean..": The average of the mean of the magnitude for the time-domain signals of gravity acceleration
+* "tBodyAccJerkMag.mean..": The average of the mean of the magnitude for Jerk signals of the body linear acceleration in time domain
+* "tBodyGyroMag.mean..": The average of the mean of the magnitude for the time-domain signals of angular velocity
+* "tBodyGyroJerkMag.mean..": The average of the mean of the magnitude for Jerk signals of the angular velocity in time domain
+* "fBodyAcc.mean...X": The average of the mean of the frequency domain signals of body acceleration in X axis
+* "fBodyAcc.mean...Y": The average of the mean of the frequency domain signals of body acceleration in Y axis
+* "fBodyAcc.mean...Z": The average of the mean of the frequency domain signals of body acceleration in Z axis
+* "fBodyAccJerk.mean...X": The average of the mean of Jerk signals of the body linear acceleration in frequency domain in X axis
+* "fBodyAccJerk.mean...Y": The average of the mean of Jerk signals of the body linear acceleration in frequency domain in Y axis
+* "fBodyAccJerk.mean...Z": The average of the mean of Jerk signals of the body linear acceleration in frequency domain in Z axis
+* "fBodyGyro.mean...X": The average of the mean of the frequency-domain signals of angular velocity in X axis 
+* "fBodyGyro.mean...Y": The average of the mean of the frequency-domain signals of angular velocity in Y axis 
+* "fBodyGyro.mean...Z": The average of the mean of the frequency-domain signals of angular velocity in Z axis 
+* "fBodyAccMag.mean..": The average of the mean of the magnitude for the frequency-domain signals of body acceleration
+* "fBodyBodyAccJerkMag.mean..": The average of the mean of the magnitude for Jerk signals of the body linear acceleration in frequency domain
+* "fBodyBodyGyroMag.mean..": The average of the mean of the magnitude for the frequency-domain signals of angular velocity
+* "fBodyBodyGyroJerkMag.mean..": The average of the mean of the magnitude for Jerk signals of the angular velocity in frequency domain
+* "tBodyAcc.std...X": The average of the standard deviation of the time-domain signals of body acceleration in X axis
+* "tBodyAcc.std...Y": The average of the standard deviation of the time-domain signals of body acceleration in Y axis
+* "tBodyAcc.std...Z": The average of the standard deviation of the time-domain signals of body acceleration in Z axis
+* "tGravityAcc.std...X": The average of the standard deviation of the time-domain signals of gravity acceleration in X axis
+* "tGravityAcc.std...Y": The average of the standard deviation of the time-domain signals of gravity acceleration in Y axis
+* "tGravityAcc.std...Z": The average of the standard deviation of the time-domain signals of gravity acceleration in Z axis
+* "tBodyAccJerk.std...X": The average of the standard deviation of Jerk signals of the body linear acceleration in time domain in X axis
+* "tBodyAccJerk.std...Y": The average of the standard deviation of Jerk signals of the body linear acceleration in time domain in Y axis
+* "tBodyAccJerk.std...Z": The average of the standard deviation of Jerk signals of the body linear acceleration in time domain in Z axis
+* "tBodyGyro.std...X": The average of the standard deviation of the time-domain signals of angular velocity in X axis 
+* "tBodyGyro.std...Y": The average of the standard deviation of the time-domain signals of angular velocity in Y axis 
+* "tBodyGyro.std...Z": The average of the standard deviation of the time-domain signals of angular velocity in Z axis 
+* "tBodyGyroJerk.std...X": The average of the standard deviation of Jerk signals of the angular velocity in time domain in X axis
+* "tBodyGyroJerk.std...Y": The average of the standard deviation of Jerk signals of the angular velocity in time domain in Y axis
+* "tBodyGyroJerk.std...Z": The average of the standard deviation of Jerk signals of the angular velocity in time domain in Z axis
+* "tBodyAccMag.std..": The average of the standard deviation of the magnitude for the time-domain signals of body acceleration
+* "tGravityAccMag.std..": The average of the standard deviation of the magnitude for the time-domain signals of gravity acceleration
+* "tBodyAccJerkMag.std..": The average of the standard deviation of the magnitude for Jerk signals of the body linear acceleration in time domain
+* "tBodyGyroMag.std..": The average of the standard deviation of the magnitude for the time-domain signals of angular velocity
+* "tBodyGyroJerkMag.std..": The average of the standard deviation of the magnitude for Jerk signals of the angular velocity in time domain
+* "fBodyAcc.std...X": The average of the standard deviation of the frequency domain signals of body acceleration in X axis
+* "fBodyAcc.std...Y": The average of the standard deviation of the frequency domain signals of body acceleration in Y axis
+* "fBodyAcc.std...Z": The average of the standard deviation of the frequency domain signals of body acceleration in Z axis
+* "fBodyAccJerk.std...X": The average of the standard deviation of Jerk signals of the body linear acceleration in frequency domain in X axis
+* "fBodyAccJerk.std...Y": The average of the standard deviation of Jerk signals of the body linear acceleration in frequency domain in Y axis
+* "fBodyAccJerk.std...Z": The average of the standard deviation of Jerk signals of the body linear acceleration in frequency domain in Z axis
+* "fBodyGyro.std...X": The average of the standard deviation of the frequency-domain signals of angular velocity in X axis 
+* "fBodyGyro.std...Y": The average of the standard deviation of the frequency-domain signals of angular velocity in Y axis 
+* "fBodyGyro.std...Z": The average of the standard deviation of the frequency-domain signals of angular velocity in Z axis 
+* "fBodyAccMag.std..": The average of the standard deviation of the magnitude for the frequency-domain signals of body acceleration
+* "fBodyBodyAccJerkMag.std..": The average of the standard deviation of the magnitude for Jerk signals of the body linear acceleration in frequency domain
+* "fBodyBodyGyroMag.std..": The average of the standard deviation of the magnitude for the frequency-domain signals of angular velocity
+* "fBodyBodyGyroJerkMag.std..": The average of the standard deviation of the magnitude for Jerk signals of the angular velocity in frequency domain
