@@ -11,23 +11,15 @@ The experiments have been carried out with a group of 30 volunteers within an ag
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. 
 
 ### Creation of the tidy data
-Description on how to create the tidy data file (1. download the data, ...)/
-Step 1: Read in *features.txt* and extract only the **mean()** and **std()** variables using grep command. To exclude undesired variables **meanFreq()** and **angle(...Mean)**, make sure to set fixed=TRUE in grep command.
-Step 2: Read in test sets (*X_test.txt*, *subject_test.txt*, *y_test.txt*) and training sets (*X_train.txt*, *subject_train.txt*, *y_train.txt*); combined the three files for test sets into data frame, and do the same for the three files for training sets;
-Step 3: Merge training sets and test sets using full\_join command (what software? which version?). Export the merged data sets to *1st_dataset.txt* for later processing.
+The tidy data set was created under R 3.2.0 and x86\_64-apple-darwin13.4.0 (64-bit) platform, running under OS X 10.10.5 (Yosemite). *dplyr_0.4.3* package was loaded for processing the raw data. The following steps describe how the tidy data set was created.
+
+Step 1: Read in *features.txt* through *read.table* command; extract only the **mean()** and **std()** variables using *grep* command. To exclude undesired variables **meanFreq()** and **angle(...Mean)**, make sure to set **fixed=TRUE** in *grep* command.
+Step 2: Read in test sets (*X_test.txt*, *subject_test.txt*, *y_test.txt*) and the training sets (*X_train.txt*, *subject_train.txt*, *y_train.txt*) through *read.table* command; combine the three files for test sets into data frame, and do the same for the three files for training sets;
+Step 3: Merge training sets and test sets using full\_join command (what software? which version?). Use write.table command to export the merged data sets to *1st_dataset.txt* for the sake of later processing, so there is no need to re-run the previous steps.
 Step 4: Add a new variable which combines subject and activity together, using mutate command in dplyr package (what version?)
-Step 5: Using the newly created variable as the factor, calculate the average for each variable of each activity and each subject through sapply and tapply commands. Convert the results into a data frame.
-Step 6: Replace the label of activity in the tidy data set with the descriptive names in *activity_labels.txt*, using merge and select command.
-Step 7: Export the 
-Step 8:
-Step 9:
-
-com.average <- merge(activity_labels, com.average, by.x = "V1", by.y = "activity") %>% rename(activity = V2)
-com.average <- select(com.average, 2:(length(com.average)-1))
-dim(com.average)
-
-# Export the second tidy data set
-write.table(com.average, "2nd_tidydataset.txt", row.name=FALSE)
+Step 5: Using the newly created variable as the factor, calculate the average for each variable of each activity and each subject through *sapply* and *tapply* commands. Convert the results into a data frame.
+Step 6: Replace the label of activity in the tidy data set with the descriptive names in *activity_labels.txt*, using *merge* and *select* command.
+Step 7: Use *write.table* command to export the finalized data to *2nd_dataset_tidy.txt*.
 
 ###Cleaning of the data
 Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail]()
