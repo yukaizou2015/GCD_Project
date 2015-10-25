@@ -46,6 +46,28 @@ If you used any code in the codebook that had the echo=FALSE attribute post this
 
 ## List of Variables
 *"Variable"(Unit): Description*
+
+|    | Column Name                       |Description|
+|----|-----------------------------------|----|
+| 1  | activities                        |activities type|
+| 2  | subject                           |subject number|
+| 3  | tBodyAccMeanX                     |time domain signals body acceleration mean x-axis|
+| 4  | tBodyAccMeanY                     |time domain signals body acceleration mean y-axis|
+| 5  | tBodyAccMeanZ                     |time domain signals body acceleration mean z-axis |
+| 6  | tGravityAccMeanX                  |time domain signals gravity acceleration mean x-axis |
+| 7  | tGravityAccMeanY                  |time domain signals gravity acceleration mean y-axis |
+| 8  | tGravityAccMeanZ                  |time domain signals gravity acceleration mean z-axis |
+| 9  | tBodyAccJerkMeanX                 |time domain signals body acceleration Jerk signals mean x-axis |
+| 10 | tBodyAccJerkMeanY                 |time domain signals body acceleration Jerk signals mean y-axis |
+| 11 | tBodyAccJerkMeanZ                 |time domain signals body acceleration Jerk signals mean z-axis |
+| 12 | tBodyGyroMeanX                    |time domain signals body gyroscope mean x-axis |
+| 13 | tBodyGyroMeanY                    |time domain signals body gyroscope mean y-axis |
+| 14 | tBodyGyroMeanZ                    |time domain signals body gyroscope mean z-axis |
+| 15 | tBodyGyroJerkMeanX                |time domain signals body gyroscope Jerk signals mean x-axis |
+| 16 | tBodyGyroJerkMeanY                |time domain signals body gyroscope Jerk signals mean y-axis |
+| 17 | tBodyGyroJerkMeanZ                |time domain signals body gyroscope Jerk signals mean z-axis |
+
+
 |    | Column Name                       |Description|
 |----|-----------------------------------|----|
 | 1  | activity                          |: Factor w/ 6 levels "LAYING","SITTING",..: 4 4 4 4 4 4 4 4 4 4 ...|
