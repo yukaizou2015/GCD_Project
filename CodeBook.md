@@ -46,8 +46,10 @@ If you used any code in the codebook that had the echo=FALSE attribute post this
 
 ## List of Variables
 *"Variable"(Unit): Description*
- |1| activity |                   : Factor w/ 6 levels "LAYING","SITTING",..: 4 4 4 4 4 4 4 4 4 4 ...|
- |2| subject |                   : int  1 18 16 24 22 12 10 19 17 25 ...|
+|    | Column Name                       |Description|
+|----|-----------------------------------|----|
+| 1  | activity                          |: Factor w/ 6 levels "LAYING","SITTING",..: 4 4 4 4 4 4 4 4 4 4 ...|
+|2| subject |                   : int  1 18 16 24 22 12 10 19 17 25 ...|
  |3| tBodyAcc.mean...X |         : num  0.277 0.274 0.276 0.277 0.279 ...|
  |4| tBodyAcc.mean...Y |         : num  -0.0174 -0.0178 -0.0204 -0.0225 -0.0167 ...|
  $ tBodyAcc.mean...Z          : num  -0.111 -0.104 -0.109 -0.111 -0.107 ...
