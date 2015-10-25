@@ -27,13 +27,12 @@ Train <- data.frame(subject_train, y_train, X_train) %>% select(1:2, ind.mean+2,
 
 combined <- full_join(Train, Test)
 # Export the first tidy data set
-write.table(combined, "1st_tidydataset.txt", row.name=FALSE)
+write.table(combined, "1st_dataset.txt", row.name=FALSE)
 
 com.measure <- mutate(combined, measurement = paste(subject,activity,sep="."))
 com.average <- data.frame(sapply(com.measure, function(x) tapply(x, com.measure$measurement, mean)))
 com.average <- merge(activity_labels, com.average, by.x = "V1", by.y = "activity") %>% rename(activity = V2)
 com.average <- select(com.average, 2:(length(com.average)-1))
-dim(com.average)
 
 # Export the second tidy data set
-write.table(com.average, "2nd_tidydataset.txt", row.name=FALSE)
+write.table(com.average, "2nd_dataset_tidy.txt", row.name=FALSE)

@@ -1,19 +1,33 @@
 # CodeBook
 
 ## Project Description
-In this project, a tidy data set is prepared from the raw data collected from the accelerometers from the Samsung Galaxy S smartphone. 
+In this course project, a tidy data set is prepared from the raw data collected from the accelerometers from the Samsung Galaxy S smartphone.
 
-##Study design and data processing
+## Study design and data processing
 
-###Collection of the raw data
+### Collection of the raw data
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING\_UPSTAIRS, WALKING\_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity was captured at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. 
 
-##Creating the tidy datafile
-
-###Guide to create the tidy data file
+### Creation of the tidy data
 Description on how to create the tidy data file (1. download the data, ...)/
+Step 1: Read in *features.txt* and extract only the **mean()** and **std()** variables using grep command. To exclude undesired variables **meanFreq()** and **angle(...Mean)**, make sure to set fixed=TRUE in grep command.
+Step 2: Read in test sets (*X_test.txt*, *subject_test.txt*, *y_test.txt*) and training sets (*X_train.txt*, *subject_train.txt*, *y_train.txt*); combined the three files for test sets into data frame, and do the same for the three files for training sets;
+Step 3: Merge training sets and test sets using full\_join command (what software? which version?). Export the merged data sets to *1st_dataset.txt* for later processing.
+Step 4: Add a new variable which combines subject and activity together, using mutate command in dplyr package (what version?)
+Step 5: Using the newly created variable as the factor, calculate the average for each variable of each activity and each subject through sapply and tapply commands. Convert the results into a data frame.
+Step 6: Replace the label of activity in the tidy data set with the descriptive names in *activity_labels.txt*, using merge and select command.
+Step 7: Export the 
+Step 8:
+Step 9:
+
+com.average <- merge(activity_labels, com.average, by.x = "V1", by.y = "activity") %>% rename(activity = V2)
+com.average <- select(com.average, 2:(length(com.average)-1))
+dim(com.average)
+
+# Export the second tidy data set
+write.table(com.average, "2nd_tidydataset.txt", row.name=FALSE)
 
 ###Cleaning of the data
 Short, high-level description of what the cleaning script does. [link to the readme document that describes the code in greater detail]()
@@ -21,33 +35,9 @@ Short, high-level description of what the cleaning script does. [link to the rea
 ##Description of the variables in the 2nd_tidydataset.txt file
 The tidy dataset contains 180 rows and 68 columns. Each row represent the average of the measurement for all the variables of each activity (denoted by 1st column) and each subject (denoted by 2nd column). Column 3 to 35 are the mean of the measurement for each variable, and column 36 to 68 are the standard deviation of the measurement for each variable.
 
-###Variable 1 (repeat this section for all variables in the dataset)
-Short description of what the variable describes.
+### List of Variables
 
-Some information on the variable including:
- - Class of the variable
- - Unique values/levels of the variable
- - Unit of measurement (if no unit of measurement list this as well)
- - In case names follow some schema, describe how entries were constructed (for example time-body-gyroscope-z has 4 levels of descriptors. Describe these 4 levels). 
-
-(you can easily use Rcode for this, just load the dataset and provide the information directly form the tidy data file)
-
-####Notes on variable 1:
-If available, some additional notes on the variable not covered elsewehere. If no notes are present leave this section out.
-
-##Sources
-1. <http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>
-2. <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
-
-##Annex
-If you used any code in the codebook that had the echo=FALSE attribute post this here (make sure you set the results parameter to 'hide' as you do not want the results to show again)
-
-====
-
-## List of Variables
-*"Variable"(Unit): Description*
-
-|   | Column Name                      |Summary| Description|
+|    | Column Name                       |Summary| Description |
 |----|-----------------------------------|-------|-------------|
 | 1 | activity                         | Factor w/ 6 levels "LAYING","SITTING",..: 4 4 4 4 4 4 4 4 4 4 ...|Tasks performed by the volunteers, including: WALKING, WALKING\_UPSAIRS, WALKING\_DOWNSTAIRS, SITTING, STANDING, LAYING|
 |2| subject| int  1 18 16 24 22 12 10 19 17 25 ...|The volunteers in the experiments. All volunteers were within an age bracket of 19-48 years, and were labeled from 1 to 30|
@@ -117,4 +107,17 @@ If you used any code in the codebook that had the echo=FALSE attribute post this
 |66| fBodyBodyAccJerkMag.std.. | num  -0.103 -0.444 -0.441 -0.403 0.158 ...|The average of the standard deviation of the magnitude for Jerk signals of the body linear acceleration in frequency domain|
 |67| fBodyBodyGyroMag.std..    | num  -0.321 -0.669 -0.721 -0.668 -0.464 ...|The average of the standard deviation of the magnitude for the frequency-domain signals of angular velocity|
 |68| fBodyBodyGyroJerkMag.std..| num  -0.382 -0.769 -0.746 -0.567 -0.476 ...|The average of the standard deviation of the magnitude for Jerk signals of the angular velocity in frequency domain|
+
+## Sources
+1. Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012.
+2. Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
+3. <http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>
+4. <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
+
+##Annex
+If you used any code in the codebook that had the echo=FALSE attribute post this here (make sure you set the results parameter to 'hide' as you do not want the results to show again)
+
+====
+
+
 
