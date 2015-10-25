@@ -106,17 +106,3 @@ The tidy dataset contains 180 rows and 68 columns. Each row represent the averag
 |66| fBodyBodyAccJerkMag.std.. | num  -0.103 -0.444 -0.441 -0.403 0.158 ...|The average of the standard deviation of the magnitude for Jerk signals of the body linear acceleration in frequency domain|
 |67| fBodyBodyGyroMag.std..    | num  -0.321 -0.669 -0.721 -0.668 -0.464 ...|The average of the standard deviation of the magnitude for the frequency-domain signals of angular velocity|
 |68| fBodyBodyGyroJerkMag.std..| num  -0.382 -0.769 -0.746 -0.567 -0.476 ...|The average of the standard deviation of the magnitude for Jerk signals of the angular velocity in frequency domain|
-
-## Sources
-1. Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012.
-2. Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
-3. <http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>
-4. <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
-
-##Annex
-If you used any code in the codebook that had the echo=FALSE attribute post this here (make sure you set the results parameter to 'hide' as you do not want the results to show again)
-
-====
-
-
-
