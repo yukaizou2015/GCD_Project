@@ -47,12 +47,12 @@ If you used any code in the codebook that had the echo=FALSE attribute post this
 ## List of Variables
 *"Variable"(Unit): Description*
 
-|    | Column Name                       |Description|
+|    | Column Name                       |Summary| Description |
 |----|-----------------------------------|----|
-| 1  | activity                          |: Factor w/ 6 levels "LAYING","SITTING",..: 4 4 4 4 4 4 4 4 4 4 ...|
-|2| subject |                   : int  1 18 16 24 22 12 10 19 17 25 ...|
- |3| tBodyAcc.mean...X |         : num  0.277 0.274 0.276 0.277 0.279 ...|
- |4| tBodyAcc.mean...Y |         : num  -0.0174 -0.0178 -0.0204 -0.0225 -0.0167 ...|
+| 1  | activity                          |: Factor w/ 6 levels "LAYING","SITTING",..: 4 4 4 4 4 4 4 4 4 4 ...|Tasks performed by the volunteers, including: WALKING, WALKING\_UPSAIRS, WALKING\_DOWNSTAIRS, SITTING, STANDING, LAYING.|
+|2| subject |                   : int  1 18 16 24 22 12 10 19 17 25 ...||
+ |3| tBodyAcc.mean...X |         : num  0.277 0.274 0.276 0.277 0.279 ...||
+ |4| tBodyAcc.mean...Y |         : num  -0.0174 -0.0178 -0.0204 -0.0225 -0.0167 ...||
  $ tBodyAcc.mean...Z          : num  -0.111 -0.104 -0.109 -0.111 -0.107 ...
  $ tGravityAcc.mean...X       : num  0.935 0.924 0.926 0.96 0.936 ...
  $ tGravityAcc.mean...Y       : num  -0.2822 -0.2543 -0.0668 -0.1151 -0.2596 ...
@@ -118,7 +118,7 @@ If you used any code in the codebook that had the echo=FALSE attribute post this
  $ fBodyBodyGyroMag.std..     : num  -0.321 -0.669 -0.721 -0.668 -0.464 ...
  $ fBodyBodyGyroJerkMag.std.. : num  -0.382 -0.769 -0.746 -0.567 -0.476 ...
 
-* "activity": Tasks performed by the volunteers, including: WALKING, WALKING\_UPSAIRS, WALKING\_DOWNSTAIRS, SITTING, STANDING, LAYING.
+* "activity": 
 * "subject": The volunteers in the experiments. All volunteers were within an age bracket of 19-48 years, and were labeled from 1 to 30.
 * "tBodyAcc.mean...X"(m/s^2): The average of the mean of the time-domain signals of body acceleration in X axis
 * "tBodyAcc.mean...Y"(m/s^2): The average of the mean of the time-domain signals of body acceleration in Y axis
