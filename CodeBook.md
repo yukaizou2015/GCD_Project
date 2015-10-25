@@ -31,7 +31,7 @@ The tidy data set was created under R 3.2.0 and x86\_64-apple-darwin13.4.0 (64-b
 
 The [run_analysis.R](https://github.com/yukaizou2015/GCD_Project/blob/master/run_analysis.R) provides the detailed codes and descriptions on how every line leads to the the tidy data set.
 
-##Description of the variables in the 2nd_tidydataset.txt file
+##Description of the variables in the 2nd_dataset_tidy.txt file
 The tidy dataset contains 180 rows and 68 columns. Each row represent the average of the measurement for all the variables of each activity (denoted by 1st column) and each subject (denoted by 2nd column). Column 3 to 35 are the mean of the measurement for each variable, and column 36 to 68 are the standard deviation of the measurement for each variable.
 
 ### List of Variables

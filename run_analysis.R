@@ -26,7 +26,7 @@ y_train <- read.table("./UCI HAR Dataset/train/y_train.txt", stringsAsFactors = 
 Train <- data.frame(subject_train, y_train, X_train) %>% select(1:2, ind.mean+2, ind.std+2)
 
 combined <- full_join(Train, Test)
-# Export the first tidy data set
+# Export the first data set
 write.table(combined, "1st_dataset.txt", row.name=FALSE)
 
 com.measure <- mutate(combined, measurement = paste(subject,activity,sep="."))
