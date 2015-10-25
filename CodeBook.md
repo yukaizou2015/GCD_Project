@@ -13,7 +13,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 ### Creation of the tidy data
 The tidy data set was created under R 3.2.0 and x86\_64-apple-darwin13.4.0 (64-bit) platform, running under OS X 10.10.5 (Yosemite). *dplyr_0.4.3* package was loaded for processing the raw data. The following steps describe how the tidy data set was created.
 
-- Step 1: Read in *features.txt* through *read.table* command; extract only the **mean()** and **std()** variables using *grep* command. To exclude undesired variables **meanFreq()** and **angle(...Mean)**, make sure to set **fixed=TRUE** in *grep* command.
+- Step 1: Read in *features.txt* through ```{read.table} command; extract only the **mean()** and **std()** variables using *grep* command. To exclude undesired variables **meanFreq()** and **angle(...Mean)**, make sure to set **fixed=TRUE** in *grep* command.
 - Step 2: Read in test sets (*X_test.txt*, *subject_test.txt*, *y_test.txt*) and the training sets (*X_train.txt*, *subject_train.txt*, *y_train.txt*) through *read.table* command; combine the three files for test sets into data frame, and do the same for the three files for training sets;
 - Step 3: Merge training sets and test sets using full\_join command in dplyr package. Use write.table command to export the merged data sets to *1st_dataset.txt* for the sake of later processing, so there is no need to re-run the previous steps.
 - Step 4: Add a new variable which combines subject and activity together, using mutate command in dplyr package;
