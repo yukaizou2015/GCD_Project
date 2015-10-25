@@ -8,7 +8,15 @@ In this course project, a tidy data set is prepared from the raw data collected 
 ### Collection of the raw data
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING\_UPSTAIRS, WALKING\_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity was captured at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 
-The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. 
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See [features_info.txt](https://github.com/yukaizou2015/GCD_Project/blob/master/UCI%20HAR%20Dataset/features.txt) for more details. 
+
+For each record it is provided:
+
+- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+- Triaxial Angular velocity from the gyroscope. 
+- A 561-feature vector with time and frequency domain variables. 
+- Its activity label. 
+- An identifier of the subject who carried out the experiment.
 
 ### Creation of the tidy data
 The tidy data set was created under R 3.2.0 and x86\_64-apple-darwin13.4.0 (64-bit) platform, running under OS X 10.10.5 (Yosemite). *dplyr_0.4.3* package was loaded for processing the raw data. The following steps describe how the tidy data set was created.
@@ -31,7 +39,7 @@ The tidy dataset contains 180 rows and 68 columns. Each row represent the averag
 |    | Column Name                       |Summary| Description |
 |----|-----------------------------------|-------|-------------|
 | 1 | activity                         | Factor w/ 6 levels "LAYING","SITTING",..: 4 4 4 4 4 4 4 4 4 4 ...|Tasks performed by the volunteers, including: WALKING, WALKING\_UPSAIRS, WALKING\_DOWNSTAIRS, SITTING, STANDING, LAYING|
-|2| subject| int  1 18 16 24 22 12 10 19 17 25 ...|The volunteers in the experiments. All volunteers were within an age bracket of 19-48 years, and were labeled from 1 to 30|
+|2| subject| int  1 18 16 24 22 12 10 19 17 25 ...|Identifiers for the subjects who carried out the experiment|
 |3| tBodyAcc.mean...X| num  0.277 0.274 0.276 0.277 0.279 ...|The average of the mean of the time-domain signals of body acceleration in X axis (Unit: m/s^2)|
 |4| tBodyAcc.mean...Y| num  -0.0174 -0.0178 -0.0204 -0.0225 -0.0167 ...|The average of the mean of the time-domain signals of body acceleration in Y axis (Unit: m/s^2)|
 |5| tBodyAcc.mean...Z         | num  -0.111 -0.104 -0.109 -0.111 -0.107 ...|The average of the mean of the time-domain signals of body acceleration in Z axis (Unit: m/s^2)|
