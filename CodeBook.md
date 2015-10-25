@@ -1,7 +1,7 @@
 # CodeBook
 
 ## Project Description
-In this course project, a tidy data set is prepared from the raw data collected from the accelerometers from the Samsung Galaxy S smartphone. See [README.md](https://github.com/yukaizou2015/GCD_Project/blob/master/README.md) for explaining the files in this repository and how they are connected.
+In this course project, a tidy data set is prepared from the raw data collected from the accelerometers from the Samsung Galaxy S smartphone. See [README.md](https://github.com/yukaizou2015/GCD_Project/blob/master/README.md) for what files are contained in this repository and how they are connected with each other.
 
 ## Study design and data processing
 
