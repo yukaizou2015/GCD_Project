@@ -48,7 +48,7 @@ If you used any code in the codebook that had the echo=FALSE attribute post this
 *"Variable"(Unit): Description*
 
 |    | Column Name                       |Summary| Description |
-|----|-----------------------------------|----|
+|----|-----------------------------------|-------|-------------|
 | 1  | activity                          |: Factor w/ 6 levels "LAYING","SITTING",..: 4 4 4 4 4 4 4 4 4 4 ...|Tasks performed by the volunteers, including: WALKING, WALKING\_UPSAIRS, WALKING\_DOWNSTAIRS, SITTING, STANDING, LAYING.|
 |2| subject |                   : int  1 18 16 24 22 12 10 19 17 25 ...||
  |3| tBodyAcc.mean...X |         : num  0.277 0.274 0.276 0.277 0.279 ...||
